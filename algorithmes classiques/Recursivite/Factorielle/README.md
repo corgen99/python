@@ -1,7 +1,5 @@
-La fonction factorielle est un exemple classique d'algorithme récursif.
-
-Lorsqu'on travaille dans l'ensemble des entiers naturels, la factorielle est définie comme suit : f(n)=n*(n-1)*(n-2)*...*2*1
-
+La fonction factorielle est un exemple classique d'algorithme récursif.\
+Lorsqu'on travaille dans l'ensemble des entiers naturels, la factorielle est définie comme suit : f(n)=n*(n-1)*(n-2)*...*2*1\
 Dit autrement, la factorielle de n, écrite autrement n!, correspond au produit des entiers de 1 à n
 
 Cette fonction est un exemple classique d'algorithme récursif, puisqu'il vient alors que :
