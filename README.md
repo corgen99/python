@@ -1,0 +1,1 @@
+Ce dossier contient un ensemble d'algorithmes classiques codés en Python, que j'ai réalisé afin de m'entrainer à ce langage de programmation.
