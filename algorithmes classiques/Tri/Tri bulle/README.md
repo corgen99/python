@@ -17,3 +17,7 @@ L'algorithme dispose au mieux d'une complexité en O(n) si toute la liste est tr
 La terminaison de l'algorithme se justifie en constatant qu'à chaque itération, au moins une nouvelle valeur est bien triée.\
 Ainsi, la suite de l'ensemble des valeurs "non-triées" à chaque itération est une suite strictement décroissante et bornée.\
 Elle atteint donc sa borne.
+
+Reste à faire :\
+- finir la fonction tri_bulle, notamment le main() afin de convertir l'entrée (str) en une liste à trier\
+- mettre en oeuvre les tests unitaires dans tests.py

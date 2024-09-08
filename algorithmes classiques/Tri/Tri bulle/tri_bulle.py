@@ -1,76 +1,26 @@
-def verification_liste_entiers(liste):
-    '''
-    Vérifie la sanité de la liste en entrée
-    
-    Entrée :
-    liste (int[]) : liste de valeurs à vérifier
+import verifications
+import time
 
-    Sortie :
-    bool : 
-    - True si la liste n'est composée que d'entiers
-    - False sinon
+def permuter_voisins(liste, index):
     '''
-    try:
-        for i in liste:
-            i=int(i)
-        return True
-    except:
-        return False
+    Permuter la valeur dans une liste avec sa case adjacente
+    '''
+    temp=liste[index]
+    liste[index]=liste[index+1]
+    liste[index+1]=temp
+    return liste
 
-def verification_liste_flottants(liste):
+def tri_bulle_etape(liste):
     '''
-    Vérifie la sanité de la liste en entrée
-    
-    Entrée :
-    liste (float[]) : liste de valeurs à vérifier
-
-    Sortie :
-    bool : 
-    - True si la liste n'est composée que de nombres
-    - False sinon
+    Joue une étape du tri bulle
+    -> parcourir la liste de gauche à droite
+    -> si la valeur à l'index étudié est supérieurs à la valeur à sa droite, permuter
+    -> sinon, ne rien faire
     '''
-    try:
-        for i in liste:
-            i=float(i)
-        return True
-    except:
-        return False
-
-def verification_liste_str(liste):
-    '''
-    Vérifie la sanité de la liste en entrée
-    
-    Entrée :
-    liste (str[]) : liste de valeurs à vérifier
-
-    Sortie :
-    bool : 
-    - True si la liste n'est composée que de chaînes de caractères
-    - False sinon
-    '''
-    try:
-        for i in liste:
-            i=str(i)
-        return True
-    except:
-        return False
-
-def verification_liste_entiers(liste):
-    '''
-    Vérifie la sanité de la liste en entrée
-    
-    Entrée :
-    liste (value[]) : liste de valeurs à vérifier
-
-    Sortie :
-    string : type de la liste fournie
-    '''
-    if verification_liste_entiers(liste):
-        return "int"
-    elif verification_liste_flottants(liste):
-        return "float"
-    else:
-        print("Erreur ! La liste n'est pas composée que de nombres")
+    for i in range(len(liste)-1):
+        if (liste[i] > liste[i+1]): # si la valeur à gauche est supérieure à la valeur de droite, on intervertit les deux valeurs
+            permuter_voisins(liste, i)
+    return liste
 
 def tri_bulle(liste):
     '''
@@ -83,17 +33,23 @@ def tri_bulle(liste):
     Retour :
     (float[]) : liste des mêmes valeurs triées dans l'ordre croissant
     '''
-
-    try:
-        for i in liste:
-            i=float(i)
-        
-    except:
-        print("Erreur ! La liste ne contient pas que des nombres.")
-
+    if verifications.verification_liste(liste):
+        for i in range(len(liste)):
+            liste = tri_bulle_etape(liste)
+        return liste
+    else :
+        print("Erreur ! La liste fournie n'est pas homogène")
+        return liste
+    
 
 def main():
-    res=0
+    liste=input("Entrez la liste que vous souhaitez trier : ")
+    liste=liste.split()
+    start_time = time.time()
+    liste_triee=tri_bulle(liste)
+    stop_time = time.time()
+    print(f"La liste triée est : {liste_triee}")
+    print(f"La liste a été triée en {stop_time-start_time} secondes")
 
 if __name__ == "__main__":
     main()
