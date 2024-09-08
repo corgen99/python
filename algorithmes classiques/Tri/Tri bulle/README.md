@@ -18,6 +18,6 @@ La terminaison de l'algorithme se justifie en constatant qu'à chaque itération
 Ainsi, la suite de l'ensemble des valeurs "non-triées" à chaque itération est une suite strictement décroissante et bornée.\
 Elle atteint donc sa borne.
 
-Reste à faire :\
-- finir la fonction tri_bulle, notamment le main() afin de convertir l'entrée (str) en une liste à trier\
+Reste à faire :
+- finir la fonction tri_bulle, notamment le main() afin de convertir l'entrée (str) en une liste à trier
 - mettre en oeuvre les tests unitaires dans tests.py
