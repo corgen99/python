@@ -1,0 +1,1 @@
+Des algorithmes dont le but est de rechercher un élément dans une liste
