@@ -3,6 +3,8 @@ ajout d'un nombre dans une grille
 boucle principale du jeu
 '''
 
+from verification import verifier_grille
+from affichage import *
 
 def placer_nombre(grille,chiffre,ligne,colonne):
     '''
@@ -49,4 +51,17 @@ def chercher_valeurs_possible(grille, ligne, colonne):
     '''
     numero_carre=3*(ligne//3)+(colonne//3)
     nombres_indisponible=nombres_ligne(grille,ligne)+nombres_colonne(grille,colonne)+nombres_carre(grille,numero_carre)
-    return [i for i in range(1,9) if i not in nombres_indisponible ]
+    return [i for i in range(1,10) if i not in nombres_indisponible ]
+
+def resoudre(grille):
+    stagnation=False
+    while not verifier_grille(grille) and not stagnation:
+        stagnation += 1
+        for i in range(9):
+            for j in range(9):
+                if grille[i][j]==0:
+                    valeurs_possibles=chercher_valeurs_possible(grille,i,j)
+                    if len(valeurs_possibles)==1:
+                        placer_nombre(grille,valeurs_possibles[0],i,j)
+                        stagnation=False
+    return grille
