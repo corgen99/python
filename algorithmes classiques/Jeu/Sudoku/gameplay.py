@@ -4,7 +4,6 @@ boucle principale du jeu
 '''
 
 from verification import verifier_grille
-from affichage import *
 
 def placer_nombre(grille,chiffre,ligne,colonne):
     '''
