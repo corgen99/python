@@ -1,4 +1,4 @@
-from sudoku import *
+from verification import *
 
 def test_ajouter_nombre():
     valeur=4
