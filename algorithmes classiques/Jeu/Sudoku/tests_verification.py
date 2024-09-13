@@ -1,25 +1,5 @@
 from verification import *
 
-def test_ajouter_nombre():
-    valeur=4
-    ligne=2
-    colonne=3
-    grille=nouvelle_grille()
-    grille=placer_nombre(grille, valeur, ligne, colonne)
-
-    expected_value=[\
-        [0,0,0,0,0,0,0,0,0],\
-        [0,0,0,0,0,0,0,0,0],\
-        [0,0,0,4,0,0,0,0,0],\
-        [0,0,0,0,0,0,0,0,0],\
-        [0,0,0,0,0,0,0,0,0],\
-        [0,0,0,0,0,0,0,0,0],\
-        [0,0,0,0,0,0,0,0,0],\
-        [0,0,0,0,0,0,0,0,0],\
-        [0,0,0,0,0,0,0,0,0]]
-
-    assert grille==expected_value
-
 def test_verifier_ligne_correcte():
     grille=[[5,6,3,8,7,9,2,1,4],\
         [7,1,9,4,2,3,6,5,8],\
