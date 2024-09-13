@@ -2,7 +2,12 @@ def nouvelle_grille():
     '''
     créée une nouvelle grille vierge de sudoku
     '''
-    return 9*[9*[0]]
+    grille=[]
+    for i in range(9):
+        grille.append([])
+        for j in range(9):
+            grille[i].append(0)
+    return grille
 
 def print_belle_grille(grille):
     '''
@@ -37,7 +42,7 @@ def placer_nombre(grille,chiffre,ligne,colonne):
     return grille
 
 grille_test=nouvelle_grille()
-print_grille_simple(grille_test)
+print_belle_grille(grille_test)
 
 grille_test=placer_nombre(grille_test, 3, 2, 1)
-print_grille_simple(grille_test)
+print_belle_grille(grille_test)
