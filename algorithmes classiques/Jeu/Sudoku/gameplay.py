@@ -4,6 +4,7 @@ boucle principale du jeu
 '''
 
 from verification import verifier_grille
+from affichage import print_belle_grille
 
 def placer_nombre(grille,chiffre,ligne,colonne):
     '''
@@ -52,6 +53,14 @@ def chercher_valeurs_possible(grille, ligne, colonne):
     nombres_indisponible=nombres_ligne(grille,ligne)+nombres_colonne(grille,colonne)+nombres_carre(grille,numero_carre)
     return [i for i in range(1,10) if i not in nombres_indisponible ]
 
+def compte_0(grille):
+    compte=0
+    for i in grille:
+        for j in i:
+            if j==0:
+                compte+=1
+    return compte
+
 def resoudre(grille):
     stagnation=False
     while not verifier_grille(grille) and not stagnation:
@@ -63,4 +72,16 @@ def resoudre(grille):
                     if len(valeurs_possibles)==1:
                         placer_nombre(grille,valeurs_possibles[0],i,j)
                         stagnation=False
+
+    nombre_zero=compte_0(grille)
+    
+    if stagnation :
+        print("Aie ! C'est un échec, je n'ai pas réussi à le résoudre.")
+        print(f"Voici la grille finale qui me bloque, il me manque {nombre_zero} valeurs :")
+        print_belle_grille(grille)
+    else:
+        print("Résolu ! Elle n'a pas fait long feu !")
+        print("Voici la grille finale :")
+        print_belle_grille(grille)
+    
     return grille
