@@ -32,3 +32,7 @@ La terminaison de l'algorithme se justifie étant donné que chaque nombre dispo
 test effectué :
 * Test avec deux nombres amis
 * Test avec deux nombres pas amis
+
+**Améliorations possibles :**
+* faire en sorte de pouvoir entrer un nombre et vérifier s'il a un nombre ami
+* calculer les nombres amis inférieurs à une certaine valeur

@@ -21,3 +21,6 @@ Complexité :
 Terminaison :
 - Si la conjecture de Syracuse est vraie, la terminaison de l'algorithme est justifié par cette dernière
 - En l'absence de vérification de la conjecture, la terminaison n'est pas assurée _a priori_ (bien que la conjecture soit vérifiée pour tout N < 2^68)
+
+**Améliorations possible**
+- recherche de l'entier inférieur à n ayant la suite avant le plus long temps de vol

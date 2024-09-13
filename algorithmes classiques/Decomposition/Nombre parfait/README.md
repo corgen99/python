@@ -31,3 +31,6 @@ La terminaison de l'algorithme se justifie étant donné que chaque nombre dispo
 test effectué :
 * Test avec un nombre parfait
 * Test avec un nombre pas parfait
+
+**Améliorations possibles**
+- calculer les nombres parfaits inférieurs à une valeur donnée
