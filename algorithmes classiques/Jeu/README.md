@@ -1,0 +1,1 @@
+Algorithmes de résolution de jeux simples
