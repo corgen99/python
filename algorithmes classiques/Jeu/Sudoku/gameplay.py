@@ -61,7 +61,7 @@ def compte_0(grille):
                 compte+=1
     return compte
 
-def resoudre(grille):
+def resoudre_intuitif(grille):
     stagnation=False
     while not verifier_grille(grille) and not stagnation:
         stagnation += 1

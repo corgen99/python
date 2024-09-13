@@ -1,5 +1,4 @@
-from affichage import print_belle_grille
-from gameplay import resoudre
+from gameplay import resoudre_intuitif
 
 
 grille=[\
@@ -14,4 +13,4 @@ grille=[\
         [0,0,2,0,3,0,0,7,0],\
         ] #entrer ici la grille à résoudre
 
-resoudre(grille)
+resoudre_intuitif(grille)

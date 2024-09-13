@@ -18,3 +18,12 @@ Ensuite, une fonction permettant de vérifier si une grille est correcte ou non 
 Des fonctions annexes (placer numéro, chercher les valeurs probables) seront ensuite réalisées
 
 Enfin le programme pour résoudre la grille sera réalisé.
+
+En l'état actuel, la résolution est faite d'une manière très intuitive, sans beaucoup de logique derrière (regarder les valeurs possibles dans chaque case, s'il y a une case n'ayant qu'une valeur possible, y mettre la valeur)
+
+
+**Améliorations envisageable :**
+- faire une résolution plus intelligente (par exemple : si 2 cases alignées ne peuvent contenir que 2 valeurs, alors les autres cases de la ligne ne pourront pas contenir ces valeurs)
+- faire en sorte qu'il soit plus simple de mettre une grille en entrée
+- ajouter un module pour générer automatiquement une grille
+- ajouter une interface graphique pour que l'ensemble soit plus lisible

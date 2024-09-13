@@ -76,4 +76,4 @@ def test_resolution():
         [0,0,2,0,3,0,0,7,0],\
         ]
     
-    assert verifier_grille(resoudre(grille))
+    assert verifier_grille(resoudre_intuitif(grille))
