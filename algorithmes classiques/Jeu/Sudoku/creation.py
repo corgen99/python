@@ -1,3 +1,7 @@
+'''
+creation d'une nouvelle grille aleatoire
+'''
+
 def nouvelle_grille():
     '''
     créée une nouvelle grille vierge de sudoku

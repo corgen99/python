@@ -1,3 +1,9 @@
+'''
+ajout d'un nombre dans une grille
+boucle principale du jeu
+'''
+
+
 def placer_nombre(grille,chiffre,ligne,colonne):
     '''
     place le nombre voulu dans la ligne et la colonne indiquée

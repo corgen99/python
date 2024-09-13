@@ -1,3 +1,7 @@
+'''
+verification qu'une grille est correcte
+'''
+
 def verifier_ligne(grille, ligne):
     ligne_extraite=[]
     for i in range(9):
