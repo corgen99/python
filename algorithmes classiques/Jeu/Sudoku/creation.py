@@ -20,7 +20,7 @@ def nouvelle_grille():
 def nombre_aleatoire():
     return random.randint(1,9)
 
-def nombres_dispo(grille, ligne_actuelle, numero_ligne, numero_colonne):
+def nombres_dispos(grille, ligne_actuelle, numero_ligne, numero_colonne):
     '''
     renvoie les nombres disponibles
     '''
@@ -63,27 +63,53 @@ def valeurs_dispo_ligne(grille, numero_ligne):
         res.append(disponibles)
     return res
 
-def nouveau_nombre(grille, ligne_actuelle, numero_ligne, numero_colonne):
-    '''
-    trouve un nouveau nombre répondant aux contraintes
-    '''
-    if grille[numero_ligne][numero_colonne] != 0:
-        return grille[numero_ligne][numero_colonne]
-    else:
-        liste_nombres=nombres_dispo(grille, ligne_actuelle, numero_ligne, numero_colonne)
-        random.shuffle(liste_nombres)
-        print(liste_nombres)
-        return liste_nombres[0]
-        
+# def nouveau_nombre(grille, ligne_actuelle, numero_ligne, numero_colonne):
+#     '''
+#     trouve un nouveau nombre répondant aux contraintes
+#     '''
+#     if grille[numero_ligne][numero_colonne] != 0:
+#         return grille[numero_ligne][numero_colonne]
+#     else:
+#         liste_nombres=nombres_dispos(grille, ligne_actuelle, numero_ligne, numero_colonne)
+#         random.shuffle(liste_nombres)
+#         return liste_nombres[0]
+
+def selection_ligne(ligne):
+    def recherche_uniques():
+        #recherche des nombres seuls et les retire des autres sous-chaines
+        continuer=True
+        while continuer:
+            for i in range(9):
+                if len(ligne[i])==1:
+                    for j in range(9):
+                        len1=len(ligne[j])
+                        if j!=i:
+                            try:
+                                ligne[j].remove(ligne[i][0])
+                            except:
+                                continue
+                        len2=len(ligne[j])
+                        continuer= len1!=len2
+    
+    print("Recherche unique")
+    recherche_uniques()
+    print("Recherche unique réussie")
+    for i in range(9):
+        if len(ligne[i])>1:
+            random.shuffle(ligne[i])
+            ligne[i]=[ligne[i].pop()]
+            recherche_uniques()
+    
+    return ligne
+    
 
 def creer_ligne(grille, numero_ligne):
     '''
     crée la ligne demandée
     '''
-    ligne=[]
-    for i in range(9):
-        ligne.append(nouveau_nombre(grille, ligne, numero_ligne, i))
-        print(f"Ligne {numero_ligne}, valeur : {ligne}")
+    ligne=valeurs_dispo_ligne(grille,numero_ligne)
+    print(ligne)
+    ligne=selection_ligne(ligne)
     return ligne
 
 # def creer_colonne(grille,numero_colonne):
@@ -107,9 +133,12 @@ def creer_grille():
     
     print_belle_grille(grille)
     for i in range(9):
-        # nouvelle_ligne=creer_ligne(grille,i)
-        # for j in range(9):
-        #     grille=placer_nombre(grille,nouvelle_ligne[j],i,j)
-        print(f"Ligne {i}, valeurs disponibles : {valeurs_dispo_ligne(grille, i)}")
+        print(f"Traitement de la ligne {i}")
+        print("Grille :")
+        print_belle_grille(grille)
+        nouvelle_ligne=creer_ligne(grille,i)
+        print(f"Nouvelle ligne : {nouvelle_ligne}")
+        for j in range(9):
+            grille=placer_nombre(grille,nouvelle_ligne[j][0],i,j)
     
     return grille
