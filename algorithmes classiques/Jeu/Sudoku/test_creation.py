@@ -34,3 +34,8 @@ def test_creation_ligne():
     ligne=[[1,2,3,4,5],[1,2],[3,4,2],[1],[3],[6],[7],[8],[9]]
     expected_value=[5,2,4,1,3,6,7,8,9]
     assert creation_ligne(ligne)==expected_value
+
+def test_creer_grille():
+    grille=creer_grille()
+    expected_value=True
+    assert verifier_grille(grille)==expected_value
