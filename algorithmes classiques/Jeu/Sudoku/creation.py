@@ -75,25 +75,48 @@ def valeurs_dispo_ligne(grille, numero_ligne):
 #         return liste_nombres[0]
 
 def selection_ligne(ligne):
-    def recherche_uniques():
-        #recherche des nombres seuls et les retire des autres sous-chaines
-        continuer=True
-        while continuer:
+    def controle_nombre():
+        def compte_nombre(nombre):
+            count=0
             for i in range(9):
-                if len(ligne[i])==1:
-                    for j in range(9):
-                        len1=len(ligne[j])
-                        if j!=i:
-                            try:
-                                ligne[j].remove(ligne[i][0])
-                            except:
-                                continue
-                        len2=len(ligne[j])
-                        continuer= len1!=len2
+                if nombre in ligne[i]:
+                    count+=1
+            return count
+        controle=[]
+        for i in range(1,10):
+            controle.append(compte_nombre(i))
+        return controle
     
-    print("Recherche unique")
+    def nombres_a_traiter():
+        return [i for i in range(9) if compte[i]>1]
+     
+    def recherche_uniques():
+        '''
+        Recherche des nombres seuls et les retire des autres sous-chaines
+        '''
+        def retirer_valeur(valeur,indice):
+            """
+            recherche les autres occurences de la valeur dans la liste
+            """
+            for j in range(9): #on balaye toutes les sous-listes
+                if j!=indice and valeur in ligne[j]: #si la valeur est dans la ligne de j et que j n'est pas l'indice recherché
+                    ligne[j].remove(valeur)
+                    compte[valeur-1]-=1
+
+        for i in range(9): #on balaye les sous-listes
+            if len(ligne[i])==1 and not traite[ligne[i]-1]: #si la sous liste est de taille 1 et que le nombre dedans n'a pas été traité
+                traite[ligne[i]-1]=True #on signale qu'on l'a traité
+                retirer_valeur(ligne[i], i)
+    
+    traite=[]
+    for i in range(9):
+        traite.append(False)
+
+    compte=controle_nombre()
+    traite=nombres_a_traiter()
+
+    
     recherche_uniques()
-    print("Recherche unique réussie")
     for i in range(9):
         if len(ligne[i])>1:
             random.shuffle(ligne[i])
@@ -101,7 +124,8 @@ def selection_ligne(ligne):
             recherche_uniques()
     
     return ligne
-    
+
+[4,8,2,9,6,3,7,1,5]
 
 def creer_ligne(grille, numero_ligne):
     '''
