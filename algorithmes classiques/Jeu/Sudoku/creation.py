@@ -164,3 +164,36 @@ def creer_grille():
             continue
         break
     return grille
+
+
+def selection_positions(nombre_indices):
+    pos_indices=[]
+    for i in range(nombre_indices):
+        pos=-1
+        while pos in pos_indices or pos<0:
+            pos=random.randint(0,80)
+        pos_indices.append(pos)
+    return pos_indices
+
+def effacer(grille, ligne, colonne):
+    grille[ligne][colonne]=0
+    return grille
+
+def effacer_position(grille,position,pos_indices):
+    if position in pos_indices:
+        return grille
+    else:
+        ligne=position//9
+        colonne=position%9
+        return effacer(grille,ligne,colonne)
+
+def blanchir_grille(grille):
+    nombre_indices=random.randint(25,30)
+    pos_indices=selection_positions(nombre_indices)
+    for i in range(81):
+        grille=effacer_position(grille, i, pos_indices)
+    return grille
+
+def generer_grille():
+    grille=creer_grille()
+    return blanchir_grille(grille)

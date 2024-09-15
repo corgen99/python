@@ -1,6 +1,6 @@
 from gameplay import resoudre_intuitif
 from affichage import print_belle_grille
-from creation import creer_grille
+from creation import generer_grille
 from verification import verifier_grille
 
 # grille_1=[\
@@ -56,7 +56,12 @@ from verification import verifier_grille
 
 # resoudre_intuitif(grille_3)
 
-grille=creer_grille()
-print("Grille :")
+# grille=creer_grille()
+# print("Grille :")
+# print_belle_grille(grille)
+# print(f"Le sudoku est valide : {verifier_grille(grille)}")
+
+grille=generer_grille()
 print_belle_grille(grille)
-print(f"Le sudoku est valide : {verifier_grille(grille)}")
+grille=resoudre_intuitif(grille)
+print_belle_grille(grille)

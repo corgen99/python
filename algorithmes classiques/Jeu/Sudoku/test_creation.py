@@ -39,3 +39,20 @@ def test_creer_grille():
     grille=creer_grille()
     expected_value=True
     assert verifier_grille(grille)==expected_value
+
+def test_effacer():
+    grille=[[1,2,3],[4,5,6],[7,8,9]]
+    expected_value=[[1,2,3],[0,5,6],[7,8,9]]
+    assert effacer(grille,1,0)==expected_value
+
+def test_effacer_position_non_indice():
+    grille=[[1,2,3],[4,5,6],[7,8,9]]
+    pos_indice=[]
+    expected_value=[[1,2,3],[0,5,6],[7,8,9]]
+    assert effacer_position(grille,9,pos_indice)==expected_value
+
+def test_effacer_position_non_indice():
+    grille=[[1,2,3],[4,5,6],[7,8,9]]
+    pos_indice=[9]
+    expected_value=[[1,2,3],[4,5,6],[7,8,9]]
+    assert effacer_position(grille,9,pos_indice)==expected_value
