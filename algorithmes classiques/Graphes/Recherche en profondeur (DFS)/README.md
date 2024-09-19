@@ -1,0 +1,7 @@
+L'algorithme de recherche en profondeur (DFS - Depth-First Search) est une méthode d'exploration des structures de données arborescentes ou des graphes. Son principe fondamental repose sur l'idée d'explorer un chemin aussi loin que possible avant de revenir en arrière.
+
+Imaginez-vous dans un labyrinthe. La recherche en profondeur serait comme explorer le labyrinthe en prenant systématiquement le premier chemin disponible à chaque intersection, allant aussi loin que possible. Lorsque vous atteignez un cul-de-sac, vous revenez sur vos pas jusqu'à la dernière intersection où vous n'avez pas exploré tous les chemins, puis vous prenez un nouveau chemin inexploré.
+
+Cette méthode permet d'explorer méthodiquement toutes les branches d'un graphe ou d'un arbre, en s'enfonçant d'abord profondément dans la structure avant d'explorer les autres possibilités. C'est une approche qui peut être particulièrement efficace pour certains types de problèmes, notamment ceux où la solution se trouve potentiellement loin du point de départ.
+
+La recherche en profondeur est souvent comparée à la recherche en largeur, qui explore tous les nœuds voisins avant de passer au niveau suivant. Chaque méthode a ses avantages selon le type de problème à résoudre.
