@@ -1,0 +1,1 @@
+Un programme qui dessine une pyramide de longueur donnée
