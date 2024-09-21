@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./algorithmes classiques/Graphes/Graphe",
+        "./algorithmes classiques/Decomposition/Decomposition binaire"
+    ]
+}

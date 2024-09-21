@@ -51,41 +51,41 @@ def trouve_enfant(liste_node, node_cherchee):
 
 # noeud=node(0,None)
 
-node_0=node(0)
-node_1=node(1,node_0)
-node_2=node(2,node_0)
-node_3=node(3,node_1)
-node_4=node(4,node_1)
-node_5=node(5,node_3)
-node_6=node(6,node_5)
-node_7=node(7,node_6)
-node_8=node(8,node_3)
-node_9=node(9,node_8)
-node_10=node(10,node_4)
+# node_0=node(0)
+# node_1=node(1,node_0)
+# node_2=node(2,node_0)
+# node_3=node(3,node_1)
+# node_4=node(4,node_1)
+# node_5=node(5,node_3)
+# node_6=node(6,node_5)
+# node_7=node(7,node_6)
+# node_8=node(8,node_3)
+# node_9=node(9,node_8)
+# node_10=node(10,node_4)
 
 # print(node_7)
 # node_7.print_chemin()
 
-liste_node=[node_0, node_1, node_2, node_3, node_4, node_5,\
-            node_6, node_7, node_8, node_9, node_10]
+# liste_node=[node_0, node_1, node_2, node_3, node_4, node_5,\
+#             node_6, node_7, node_8, node_9, node_10]
 
 
-def afficher_node_arbre(node):
-    print(f' {node.get_numero()} ', sep="", end="")
+# def afficher_node_arbre(node):
+#     print(f' {node.get_numero()} ', sep="", end="")
 
-def print_enfants(liste_node, node):
-    liste_enfant=trouve_enfant(liste_node, node)
-    nombre_enfants=len(liste_enfant)
-    taille=3*nombre_enfants
-    position_parent=taille//2
-    for _ in range(position_parent-1):
-        print(' ', sep="", end="")
+# def print_enfants(liste_node, node):
+#     liste_enfant=trouve_enfant(liste_node, node)
+#     nombre_enfants=len(liste_enfant)
+#     taille=3*nombre_enfants
+#     position_parent=taille//2
+#     for _ in range(position_parent-1):
+#         print(' ', sep="", end="")
 
-    afficher_node_arbre(node)
-    print(end="\n\n")
-    for nodes in liste_enfant:
-        afficher_node_arbre(nodes)
-    print()
+#     afficher_node_arbre(node)
+#     print(end="\n\n")
+#     for nodes in liste_enfant:
+#         afficher_node_arbre(nodes)
+#     print()
 
 # print_enfants(liste_node, node_3)
 
@@ -169,20 +169,20 @@ def print_arbre(liste_node):
                 print_node(liste_node[j])
         print(end="\n\n")
 
-print_arbre(liste_node)
+# print_arbre(liste_node)
 
-new_node_0=node(0,None)
-new_node_1=node(1,new_node_0)
-new_node_2=node(2,new_node_1)
-new_node_3=node(3,new_node_2)
-new_node_4=node(4,new_node_2)
-new_node_5=node(5,new_node_2)
-new_node_6=node(6,new_node_2)
-new_node_7=node(7,new_node_1)
-new_node_8=node(8,new_node_0)
+# new_node_0=node(0,None)
+# new_node_1=node(1,new_node_0)
+# new_node_2=node(2,new_node_1)
+# new_node_3=node(3,new_node_2)
+# new_node_4=node(4,new_node_2)
+# new_node_5=node(5,new_node_2)
+# new_node_6=node(6,new_node_2)
+# new_node_7=node(7,new_node_1)
+# new_node_8=node(8,new_node_0)
 
-liste_new_node=[new_node_0, new_node_1, new_node_2,\
-                new_node_3, new_node_4, new_node_5,\
-                new_node_6, new_node_7, new_node_8]
+# liste_new_node=[new_node_0, new_node_1, new_node_2,\
+#                 new_node_3, new_node_4, new_node_5,\
+#                 new_node_6, new_node_7, new_node_8]
 
-print_arbre(liste_new_node)
+# print_arbre(liste_new_node)
